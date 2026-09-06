@@ -1,0 +1,495 @@
+/* =========================================================
+   Base setup
+   ========================================================= */
+:root {
+  --bg: #faf8f3;
+  --ink: #2a2e28;
+  --ink-soft: #565a51;
+  --forest: #3c5a45;
+  --forest-dark: #2c4433;
+  --gold: #a98358;
+  --line: #ddd6c7;
+  --max-width: 1080px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, "Segoe UI", Inter, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+  margin: 0 0 0.5em 0;
+}
+
+h1 { font-size: 2.6rem; }
+h2 { font-size: 1.9rem; }
+h3 { font-size: 1.3rem; }
+
+p {
+  margin: 0 0 1em 0;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+
+a {
+  color: var(--forest);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =========================================================
+   Header / Nav
+   ========================================================= */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.logo span {
+  color: var(--forest);
+}
+
+nav.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+nav.main-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.98rem;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+nav.main-nav a:hover,
+nav.main-nav a:focus-visible {
+  border-bottom-color: var(--forest);
+}
+
+nav.main-nav a.active {
+  color: var(--forest-dark);
+  border-bottom-color: var(--forest);
+}
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+.btn {
+  display: inline-block;
+  padding: 13px 28px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.98rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--forest);
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--forest-dark);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--forest-dark);
+  border-color: var(--forest-dark);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: var(--forest);
+  color: #fff;
+  border-color: var(--forest);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   Hero (home page)
+   ========================================================= */
+.hero {
+  padding: 84px 0 70px;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero .eyebrow {
+  color: var(--gold);
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  max-width: 16ch;
+}
+
+.hero p.lede {
+  font-size: 1.15rem;
+  max-width: 52ch;
+  color: var(--ink-soft);
+}
+
+.hero .cta-row {
+  margin-top: 28px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Fact strip under hero */
+.facts {
+  padding: 50px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.facts .fact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.fact-grid .fact + .fact {
+  border-left: 1px solid var(--line);
+  padding-left: 40px;
+}
+
+.fact h3 {
+  margin-bottom: 8px;
+}
+
+.fact p {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   Generic page header (non-home pages)
+   ========================================================= */
+.page-header {
+  padding: 60px 0 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-header p.lede {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  max-width: 55ch;
+}
+
+/* =========================================================
+   Sections
+   ========================================================= */
+.section {
+  padding: 64px 0;
+}
+
+.section + .section {
+  border-top: 1px solid var(--line);
+}
+
+.section-heading {
+  margin-bottom: 36px;
+  max-width: 60ch;
+}
+
+/* =========================================================
+   Package cards (Services page)
+   ========================================================= */
+.packages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+}
+
+.package {
+  padding: 32px 28px;
+  border-left: 1px solid var(--line);
+}
+
+.package:first-child {
+  border-left: none;
+}
+
+.package .price {
+  font-family: Georgia, "Iowan Old Style", serif;
+  font-size: 1.6rem;
+  color: var(--forest-dark);
+  margin-bottom: 4px;
+}
+
+.package .guests {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  margin-bottom: 18px;
+}
+
+.package .meta {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.package ul {
+  padding-left: 18px;
+  margin: 0 0 12px 0;
+}
+
+.package li {
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  margin-bottom: 8px;
+}
+
+.package .footnote {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.pricing-note {
+  margin-top: 28px;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* =========================================================
+   Steps (How It Works page)
+   ========================================================= */
+.steps {
+  counter-reset: step;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 24px;
+  padding: 28px 0;
+}
+
+.step + .step {
+  border-top: 1px solid var(--line);
+}
+
+.step .num {
+  counter-increment: step;
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  color: var(--gold);
+}
+
+.step .num::before {
+  content: counter(step);
+}
+
+/* =========================================================
+   About page
+   ========================================================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.about-photo {
+  aspect-ratio: 4 / 5;
+  background: #efe9dc;
+  border: 1px dashed var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 16px;
+}
+
+/* =========================================================
+   Contact page
+   ========================================================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+}
+
+.contact-info dt {
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 20px;
+}
+
+.contact-info dt:first-child {
+  margin-top: 0;
+}
+
+.contact-info dd {
+  margin: 4px 0 0 0;
+  color: var(--ink-soft);
+}
+
+form.contact-form label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 18px;
+}
+
+form.contact-form label:first-child {
+  margin-top: 0;
+}
+
+form.contact-form input,
+form.contact-form select,
+form.contact-form textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 0.96rem;
+  background: #fff;
+  color: var(--ink);
+}
+
+form.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+form.contact-form button {
+  margin-top: 22px;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+}
+
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.site-footer .footer-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer .footer-links a {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  text-decoration: none;
+}
+
+.site-footer .footer-links a:hover {
+  color: var(--forest);
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 800px) {
+  h1 { font-size: 2rem; }
+
+  .fact-grid,
+  .packages {
+    grid-template-columns: 1fr;
+  }
+
+  .fact-grid .fact + .fact,
+  .package {
+    border-left: none;
+    border-top: 1px solid var(--line);
+    padding-left: 0;
+    padding-top: 28px;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

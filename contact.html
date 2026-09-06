@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | [YOUR BUSINESS NAME]</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">[YOUR BUSINESS NAME] <span>Events</span></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-header">
+      <div class="container">
+        <h1>Schedule a Consultation</h1>
+        <p class="lede">Tell me a bit about your event and I'll follow up
+          to set up a time to talk.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div>
+            <!--
+              OPTION A: Simple mailto form (works with zero backend).
+              Replace YOUR_EMAIL_HERE below. This opens the visitor's
+              own email client with the form fields pre-filled in the body.
+              It is NOT fully reliable (depends on visitor having a mail
+              app configured), but requires no server or paid service.
+
+              OPTION B (recommended once you're ready): swap this <form>
+              for an embed from a free form service (e.g. Tally, Google
+              Forms) or a scheduling tool (e.g. Calendly) so submissions
+              land somewhere reliable and you can offer real time slots.
+            -->
+            <form class="contact-form" action="mailto:[YOUR_EMAIL_HERE]" method="post" enctype="text/plain">
+
+              <label for="name">Name</label>
+              <input type="text" id="name" name="Name" required>
+
+              <label for="email">Email</label>
+              <input type="email" id="email" name="Email" required>
+
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="Phone">
+
+              <label for="date">Event date (if known)</label>
+              <input type="text" id="date" name="Event Date">
+
+              <label for="guests">Estimated guest count</label>
+              <input type="text" id="guests" name="Guest Count">
+
+              <label for="venue">Venue (if booked)</label>
+              <input type="text" id="venue" name="Venue">
+
+              <label for="message">Tell me about your event</label>
+              <textarea id="message" name="Message" placeholder="[Optional placeholder text, e.g. 'What are you looking for help with?']"></textarea>
+
+              <button type="submit" class="btn btn-primary">Send Inquiry</button>
+
+            </form>
+          </div>
+
+          <dl class="contact-info">
+            <dt>Email</dt>
+            <dd>[YOUR EMAIL ADDRESS]</dd>
+
+            <dt>Phone</dt>
+            <dd>[YOUR PHONE NUMBER]</dd>
+
+            <dt>Service Area</dt>
+            <dd>Chittenden County &amp; greater Vermont<br>[ADD SPECIFIC TOWNS IF YOU WANT TO LIST THEM]</dd>
+
+            <dt>Response Time</dt>
+            <dd>[e.g. "I typically respond within 1–2 business days."]</dd>
+
+            <dt>Instagram</dt>
+            <dd><a href="[YOUR INSTAGRAM URL]">[@YOUR_HANDLE]</a></dd>
+          </dl>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; [YEAR] [YOUR BUSINESS NAME]. Serving Burlington &amp; greater Vermont.</p>
+      <ul class="footer-links">
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="[YOUR INSTAGRAM URL]">Instagram</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
