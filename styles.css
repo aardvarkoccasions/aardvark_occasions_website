@@ -346,40 +346,34 @@ button:focus-visible {
 .packages {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0;
+  gap: 1px;
+  background: var(--line);
   border: 1px solid var(--line);
 }
 
-@media (min-width: 860px) {
+/* Tablet: 2 columns. Desktop: all 4 tiers in a row.
+   Using a 1px gap + background color (instead of per-child borders)
+   means the divider lines stay correct automatically no matter how
+   many columns are showing, including this 4th tier. */
+@media (min-width: 700px) {
   .packages {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .packages {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 .package {
   padding: 28px 22px;
+  background: var(--bg);
 }
 
 @media (min-width: 600px) {
-  .package { padding: 32px 28px; }
-}
-
-@media (min-width: 860px) {
-  .package {
-    border-left: 1px solid var(--line);
-  }
-  .package:first-child {
-    border-left: none;
-  }
-}
-
-@media (max-width: 859px) {
-  .package {
-    border-top: 1px solid var(--line);
-  }
-  .package:first-child {
-    border-top: none;
-  }
+  .package { padding: 30px 24px; }
 }
 
 .package .price {
@@ -494,6 +488,8 @@ button:focus-visible {
   aspect-ratio: 4 / 5;
   max-width: 280px;
   margin: 0 auto;
+  background: #efe9dc;
+  border: 1px dashed var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -501,12 +497,6 @@ button:focus-visible {
   font-size: 0.85rem;
   text-align: center;
   padding: 16px;
-}
-
-.about-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 @media (min-width: 700px) {
